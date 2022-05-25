@@ -1,0 +1,49 @@
+{
+  "name": "storm-ui",
+  "version": "1.0.4",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "author": "renanwallace",
+  "license": "MIT",
+  "files": [
+    "lib"
+  ],
+  "exports": {
+    ".": "./lib/index.js",
+    "./index.css": "./lib/index.css"
+  },
+  "scripts": {
+    "clean": "rimraf lib",
+    "build": "yarn clean && node ./esbuild.js && yarn ts-types",
+    "build:prod": "NODE_ENV=production yarn build",
+    "build:dev": "NODE_ENV=development yarn build",
+    "ts-types": "tsc --emitDeclarationOnly --outDir lib"
+  },
+  "dependencies": {
+    "@vanilla-extract/recipes": "^0.2.4"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.9",
+    "@types/react-dom": "^18.0.5",
+    "@typescript-eslint/eslint-plugin": "^5.26.0",
+    "@typescript-eslint/parser": "^5.26.0",
+    "@vanilla-extract/css": "^1.7.0",
+    "@vanilla-extract/esbuild-plugin": "^2.0.5",
+    "esbuild": "^0.14.39",
+    "esbuild-plugin-external-global": "^1.0.1",
+    "eslint": "^8.16.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.30.0",
+    "eslint-plugin-react-hooks": "^4.5.0",
+    "prettier": "^2.6.2",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.7.2"
+  },
+  "peerDependencies": {
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  }
+}
